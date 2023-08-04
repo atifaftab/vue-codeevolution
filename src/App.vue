@@ -3,16 +3,16 @@
   <HelloWorld msg="Hello Vue 3.0 + Vite" /> -->
     <div><h2>{{intro}} {{ name }}</h2></div>
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <button class="button" v-bind:disabled="isDisabled" >Enter</button>
+    <button class="button" :disabled="isDisabled" >Enter</button>
 
-    <h2 v-bind:id="headingId">Welcome to Batcave</h2>
+    <h2 :id="headingId">Welcome to Batcave</h2>
     <h2 class="underline">underlined</h2>
-    <h2 class="underline" v-bind:class="status">Status</h2>
-    <h2 v-bind:class="isPromoted && 'promoted'">Movie</h2>
-    <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">new releases</h2>
-    <h2 v-bind:class="['new','promoted']">I am green and Italic</h2>
-    <h2 v-bind:class="[isPromoted && 'promoted',isSoldOut ? 'sold-out' : 'new']">Array with conditional  </h2>
-    <h2 v-bind:class="
+    <h2 class="underline" :class="status">Status</h2>
+    <h2 :class="isPromoted && 'promoted'">Movie</h2>
+    <h2 :class="isSoldOut ? 'sold-out' : 'new'">new releases</h2>
+    <h2 :class="['new','promoted']">I am green and Italic</h2>
+    <h2 :class="[isPromoted && 'promoted',isSoldOut ? 'sold-out' : 'new']">Array with conditional  </h2>
+    <h2 :class="
     {
       promoted : isPromoted,
       new : !isSoldOut,
