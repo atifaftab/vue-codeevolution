@@ -42,9 +42,6 @@ export default {
 }
 </script>
 <style>
-#app{
-
-}
 .button{
   text-align: center;
 }
