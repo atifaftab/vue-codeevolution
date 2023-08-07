@@ -16,14 +16,15 @@ export default{
                 {firstName: 'Barry', lastName: 'Allen'},
 
             ],
-            actors : [
+            actors : [                        //array of object, each object contains 
+                                              // name and movies , movies is an array
                 {
                     name : 'Ben Affleck', 
-                    movies : 'bvs', 'jl'
+                    movies : ['bvs', 'jl']
                 },
                 {
                     name : 'SRK',
-                    movies : 'pathan', 'khnh'
+                    movies : ['pathan', 'khnh']
                 },
             ]
         }
