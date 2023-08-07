@@ -6,9 +6,11 @@
 <h2>{{ actor.name }}</h2>
 <h3 v-for="movie in actor.movies">{{ movie }} </h3>
 </div>
+
+<h2 v-for="(value, key, index) in myInfo">{{ index }}.{{ key }} {{ value }}</h2>
 </template>
 <script>
-import { createApp } from 'vue';
+import { createApp, useAttrs } from 'vue';
 
 export default{
     name: createApp,
@@ -29,7 +31,12 @@ export default{
                     name : 'SRK',
                     movies : ['pathan', 'khnh']
                 },
-            ]
+            ],
+            myInfo : {                          //Object
+                name : 'Atif',
+                location : 'uae',
+                occ : 'Dev'
+            }
         }
     }
 }
