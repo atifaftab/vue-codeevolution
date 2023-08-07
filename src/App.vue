@@ -1,13 +1,13 @@
 <template>
-<h2 v-for="(name, index) in names">{{index}} {{ name }}</h2>
+<h2 v-for="(name, index) in names" :key="name">{{index}} {{ name }}</h2>
 <h2 v-for="(name) in fullnames">{{ name.firstName }} {{ name.lastName }}</h2>
 
-<div v-for="actor in actors">
+<div v-for="actor in actors" :key="actor">
 <h2>{{ actor.name }}</h2>
-<h3 v-for="movie in actor.movies">{{ movie }} </h3>
+<h3 v-for="movie in actor.movies" :key="movie">{{ movie }} </h3>
 </div>
 
-<h2 v-for="(value, key, index) in myInfo">{{ index }}.{{ key }} {{ value }}</h2>
+<h2 v-for="(value, key, index) in myInfo" :key="value">{{ index }}.{{ key }} {{ value }}</h2>
 </template>
 <script>
 import { createApp, useAttrs } from 'vue';
