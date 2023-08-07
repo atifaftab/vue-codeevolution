@@ -1,28 +1,22 @@
 <template>
-
-<h2 v-if="num == 0">The number is zero</h2>
-<h2 v-else-if="num >0">The number is positive</h2>
-<h2 v-else-if="num <0">The number is negative</h2>
-<h2 v-else>The number is not zero</h2>
-
-<template v-if="display">
-  <h2>Atif</h2>
-  <h2>EGA</h2>
-  <h2>com</h2>
-</template>
-<h2 v-if="showElement">v-if </h2>
-<h2 v-show="showElement">v-show </h2>
-
+<h2 v-for="(name, index) in names">{{index}} {{ name }}</h2>
+<h2 v-for="(name) in fullnames">{{ name.firstName }} {{ name.lastName }}</h2>
 </template>
 <script>
+import { createApp } from 'vue';
+
 export default{
-    name : 'App',
+    name: createApp,
     data(){
-      return{
-         num : 5,
-         display : true,
-         showElement : false
-      }
+        return{
+            names: ['name', 'game', 'fame'],
+            fullnames:[
+                {firstName: 'Bruce', lastName: 'Wayne'},
+                {firstName: 'Clark', lastName: 'Kent'},
+                {firstName: 'Barry', lastName: 'Allen'},
+
+            ]
+        }
     }
 }
 </script>
