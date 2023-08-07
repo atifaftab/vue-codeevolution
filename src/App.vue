@@ -1,15 +1,24 @@
 <template>
-<template v-for="name in names" :key="name">
-   <h2 v-if="name ==='Bruce'"> {{ name }}</h2>
+<h2>{{ add(2,1,1) }}</h2>
+<h2>{{ multiply(baseValue) }}</h2>
 </template>
-</template>
+
 <script>
-export default{
-   name: 'App',
-      data(){
-         return{
-            names : ['Bruce', 'Clark', 'Arthur']
-         }
-      }
-}
+    export default{
+        name : 'App',
+        data(){
+            return{
+                baseValue : 10 ,
+                baseMultiplier : 5
+            }
+        },
+        methods: {
+            add(a,b,c){
+                return (a+b+c)*this.baseValue;
+            },
+            multiply(a){
+                return a*this.baseMultiplier;
+            }
+        }
+    }
 </script>
