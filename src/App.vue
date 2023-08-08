@@ -8,7 +8,7 @@
     <form @submit="submitForm">
         <div>
             <label for="name">Name</label>
-            <input type="text" id="name" v-model="formValues.name">
+            <input type="text" id="name" v-model.trim="formValues.name">
         </div>
         <div>
             <label for="profileSummary">Profile Summary</label>
@@ -56,6 +56,10 @@
             <input type="radio" id="10+" value="10+" v-model="formValues.yearOfExperience">
             <label for="10+">10+</label>
         </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" v-model.number="formValues.age">
+        </div>
         <button>Submit</button>
     </form>
 </template>
@@ -71,7 +75,8 @@ export default {
                 jobLocation: [],
                 remoteWork: "no",
                 skillSet: [],
-                yearOfExperience: ''
+                yearOfExperience: '',
+                age:null
             }
         }
     },
