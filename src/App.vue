@@ -14,6 +14,23 @@
             <label for="profileSummary">Profile Summary</label>
             <textarea id="profileSummary" v-model="formValues.profileSummary" ></textarea>
         </div>
+        <div>
+            <label for="country">Country</label>
+            <select id="country" v-model="formValues.country">
+                <option value="">select a country</option>
+                <option value="India">India</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Bhutan">Bhutan</option>
+            </select>
+        </div>
+        <div>
+            <label for="jobLocation">Job Location</label>
+            <select id="jobLocation" multiple v-model="formValues.jobLocation">
+                <option value="India">India</option>
+                <option value="UAE">UAE</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
     </form>
 
 </template>
@@ -24,7 +41,9 @@ export default{
         return{
             formValues:{
                 name:'',
-                profileSummary:''
+                profileSummary:'',
+                country: '',
+                jobLocation:[]
             }
         }
 
