@@ -5,7 +5,7 @@
     </pre>
     </div>
 
-    <form>
+    <form @submit="submitForm">
         <div>
             <label for="name">Name</label>
             <input type="text" id="name" v-model="formValues.name">
@@ -56,6 +56,7 @@
             <input type="radio" id="10+" value="10+" v-model="formValues.yearOfExperience">
             <label for="10+">10+</label>
         </div>
+        <button>Submit</button>
     </form>
 </template>
 <script>
@@ -76,6 +77,10 @@ export default {
     },
     methods: {
 
+        submitForm(event){
+            event.preventDefault()
+            console.log(this.formValues)
+        }
     }
 }
 </script>
