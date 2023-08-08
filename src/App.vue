@@ -5,14 +5,14 @@
     </pre>
     </div>
 
-    <form @submit="submitForm">
+    <form @submit.prevent="submitForm">
         <div>
             <label for="name">Name</label>
-            <input type="text" id="name" v-model.trim="formValues.name">
+            <input type="text" id="name" v-model.trim.lazy="formValues.name">
         </div>
         <div>
             <label for="profileSummary">Profile Summary</label>
-            <textarea id="profileSummary" v-model="formValues.profileSummary"></textarea>
+            <textarea id="profileSummary" v-model.trim.lazy="formValues.profileSummary"></textarea>
         </div>
         <div>
             <label for="country">Country</label>
@@ -58,7 +58,7 @@
         </div>
         <div>
             <label for="age">Age</label>
-            <input type="number" id="age" v-model.number="formValues.age">
+            <input @keyup.enter="submitForm" type="number" id="age" v-model.number="formValues.age">
         </div>
         <button>Submit</button>
     </form>
@@ -83,7 +83,7 @@ export default {
     methods: {
 
         submitForm(event){
-            event.preventDefault()
+            //event.preventDefault()
             console.log(this.formValues)
         }
     }
