@@ -45,6 +45,17 @@
             <input type="checkbox" id="sql" value="sql" v-model="formValues.skillSet">
             <label for="sql">SQL</label>
         </div>
+        <div>
+            <label>Years of Experience</label>
+            <input type="radio" id="0-2" value="0-2" v-model="formValues.yearOfExperience">
+            <label for="0-2">0-2</label>
+            <input type="radio" id="2-5" value="2-5" v-model="formValues.yearOfExperience">
+            <label for="2-5">2-5</label>
+            <input type="radio" id="5-10" value="5-10" v-model="formValues.yearOfExperience">
+            <label for="5-10">5-10</label>
+            <input type="radio" id="10+" value="10+" v-model="formValues.yearOfExperience">
+            <label for="10+">10+</label>
+        </div>
     </form>
 </template>
 <script>
@@ -58,7 +69,8 @@ export default {
                 country: '',
                 jobLocation: [],
                 remoteWork: "no",
-                skillSet: []
+                skillSet: [],
+                yearOfExperience: ''
             }
         }
     },
