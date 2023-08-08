@@ -4,6 +4,7 @@
   <!-- <h2 >TOTAL - {{ item.reduce((total,curr) =>(total  = total + curr.price),0) }}</h2> -->
   <button @click="item.push({id : 4,title : 'Camera',price : 50})">add item</button>
   <h3>computed Total - {{ total }}</h3>
+  <h4>{{ reduceMethod() }}</h4>
 </template>
 <script>
 export default {
@@ -38,7 +39,8 @@ export default {
   methods: {
 
     reduceMethod() {
-      arr.reduce((accumulator, currentValue, currentIndex, array) => {
+      console.log('accumulator' + " " + 'currentValue' + " " + 'currentIndex' + " [" + 'array' + "]")
+      this.arr.reduce((accumulator, currentValue, currentIndex, array) => {
         console.log(accumulator + " " + currentValue + " " + currentIndex + " [" + array + "]")
         return accumulator + currentValue
       }, 0)
