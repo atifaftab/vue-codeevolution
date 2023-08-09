@@ -1,69 +1,29 @@
 <template>
-  <!-- <h1>{{ firstName }} {{ middleName }} {{ lastName }}</h1> -->
-  <h1>{{ computedName }}</h1>
-  <button @click="changeFullname">Change the Name</button>
-  <!-- <h2 >TOTAL - {{ item.reduce((total,curr) =>(total  = total + curr.price),0) }}</h2> -->
-  <button @click="item.push({id : 4,title : 'Camera',price : 50})">add item</button>
-  <h3>computed Total - {{ total }}</h3>
-  <h4>{{ reduceMethod() }}</h4>
+  <h2>Volume (0 - 2)</h2>
+  <h2>Current Volume - {{ volume }}</h2>
+  <button @click="volume += 2"> + </button>
+  <button @click="volume -= 2"> - </button>
 </template>
+
 <script>
 export default {
-  name: 'App',
+  name: 'App.vue',
   data() {
     return {
-      firstName: 'Mohammad',
-      lastName: 'Aftab',
-      middleName: 'Atif',
-      item: [
-        {
-          id: 1,
-          title: 'TV',
-          price: 100
-        },
-        {
-          id: 2,
-          title: 'Phone',
-          price: 200
-        },
-        {
-          id: 3,
-          title: 'Laptop',
-          price: 300
-        }
-
-      ],
-      arr: [1, 2, 3, 4, 5]
-
+      volume: 0
     }
   },
   methods: {
 
-    reduceMethod() {
-      console.log('accumulator' + " " + 'currentValue' + " " + 'currentIndex' + " [" + 'array' + "]")
-      this.arr.reduce((accumulator, currentValue, currentIndex, array) => {
-        console.log(accumulator + " " + currentValue + " " + currentIndex + " [" + array + "]")
-        return accumulator + currentValue
-      }, 0)
-    },
-    changeFullname(){
-      this.computedName = 'Bruce Batman Wyne'
-    }
   },
   computed: {
-    computedName: {
-      set(value){
-        let name = value.split(' ')
-        this.firstName = name[0]
-        this.middleName = name[1]
-        this.lastName = name[2]
-      },
-      get(){return `${this.firstName} ${this.middleName} ${this.lastName}`}
-      
-    },
-    total() {
-      // return this.item.reduce((total, curr) => (total = total + curr.price),0)
-      return this.item.reduce((total, curr) => (total + curr.price), 0)
+
+  },
+  watch: {
+    volume(value, lastValue) {
+      if (value > lastValue && value == 16) {
+        alert("higher volume can damage hearing")
+      }
     }
   }
 }
