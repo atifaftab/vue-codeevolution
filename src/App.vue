@@ -1,6 +1,7 @@
 <template>
   <!-- <h1>{{ firstName }} {{ middleName }} {{ lastName }}</h1> -->
   <h1>{{ computedName }}</h1>
+  <button @click="changeFullname">Change the Name</button>
   <!-- <h2 >TOTAL - {{ item.reduce((total,curr) =>(total  = total + curr.price),0) }}</h2> -->
   <button @click="item.push({id : 4,title : 'Camera',price : 50})">add item</button>
   <h3>computed Total - {{ total }}</h3>
@@ -44,11 +45,21 @@ export default {
         console.log(accumulator + " " + currentValue + " " + currentIndex + " [" + array + "]")
         return accumulator + currentValue
       }, 0)
+    },
+    changeFullname(){
+      this.computedName = 'Bruce Batman Wyne'
     }
   },
   computed: {
-    computedName() {
-      return `${this.firstName} ${this.middleName} ${this.lastName}`
+    computedName: {
+      set(value){
+        let name = value.split(' ')
+        this.firstName = name[0]
+        this.middleName = name[1]
+        this.lastName = name[2]
+      },
+      get(){return `${this.firstName} ${this.middleName} ${this.lastName}`}
+      
     },
     total() {
       // return this.item.reduce((total, curr) => (total = total + curr.price),0)
